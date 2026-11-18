@@ -1,3 +1,13 @@
+## 5.8.2
+
+### Patch Changes
+
+- Fix hue units in uppercase or mixed case (`0.25TURN`, `100Grad`) being parsed as degrees. Thanks to @feritcemkahraman (via #238)
+- Fix accidental color changes when right-clicking or middle-clicking the picker. Thanks to @KevinJustinTrinidad1104 (via #237)
+- Fix the mouse being ignored after a touch interaction on devices with both a touchscreen and a mouse. Thanks to @sameerdeolalikar (via #236, fixes #208)
+- Fix the hue slider position, ARIA value and arrow keys for out-of-range hues like `hsl(-90, 100%, 50%)`; such colors are now emitted with the normalized hue (`hsl(270, 100%, 50%)`). Thanks to @blueDaydreaming725 (via #239)
+- Fix a crash when the picker is rendered in a document without a `<head>` (e.g. in Zotero), and keep the alpha checkerboard in XHTML documents (via #243)
+
 ## 5.8.1
 
 - Fix RGB channels drifting when only the alpha channel is changed: `{ r: 200, g: 120, b: 35 }` no longer becomes `{ r: 199, g: 119, b: 34 }` after moving the alpha slider. Thanks to @t-hamano for the investigation (via #234, fixes #163)
